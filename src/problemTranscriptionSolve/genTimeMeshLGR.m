@@ -38,7 +38,10 @@ else
 end
 tau_ratio=(tau_segment+1)/2;
 %Calculate all the LGR points, weights and differentiation matrices
-LGR=generateLGR_All(npdu); 
+% LGR=generateLGR_All(npdu); 
+S = load('TimeMeshLGRS.mat');
+LGR = S.LGRS{npdu};
+
 tau_local_seg=zeros(M,1); %mesh in local (segmental) time frame
 t_segment_mat_m=zeros(M,length(npduidx)+1);
 t_segment_mat_p=zeros(M,length(npduidx)+1);
